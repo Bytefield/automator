@@ -1,0 +1,35 @@
+{
+    "manifest_version": 3,
+    "name": "Locator Finder",
+    "version": "1.0",
+    "description": "Find locators (CSS/XPath) for web elements easily.",
+    "permissions": [
+        "scripting",
+        "activeTab",
+        "storage"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "icons": {
+        "128": "icons/icon128.png"
+    },
+    "devtools_page": "devtools.html",
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "icons/icon128.png"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
